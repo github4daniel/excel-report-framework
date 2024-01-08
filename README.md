@@ -1,6 +1,6 @@
 # Excel Report Framework
 
-This framework presents a clever method for generating Excel reports. In the traditional approach, it writes styles and values directly into the Excel sheet, reminiscent of the Java servlet approach used before the introduction of JSP. In that earlier method, servlets were employed to output HTML. For more details, please consult the code in DrsCorrespondenceExportGenerator.java. In the conventional method, developers had to write hundreds or even thousands of lines of code for each Excel report, lacking consistency. 
+This framework presents a clever method for generating Excel reports. In the traditional approach, it writes styles and values directly into the Excel sheet, reminiscent of the Java servlet approach used before the introduction of JSP. In that earlier method, servlets were employed to output HTML. For more details, please consult the code in [DrsCorrespondenceExportGenerator.java](legacy/DrsCorrespondenceExportGenerator.java). In the conventional method, developers had to write hundreds or even thousands of lines of code for each Excel report, lacking consistency. 
 
 ### 1. Requirements
 During my tenure at Eagle Tech Company, clients frequently requested various new types of Excel reports each month. Recognizing the time-consuming nature and lack of consistency in the existing approach, I developed the Excel Report Framework. This framework can efficiently generate a standardized (tabular) Excel file based on a list of input objects. The generated Excel file, as depicted in the screenshot below, supports features such as merged cells in the Excel sheet. This framework streamlined the process of creating diverse Excel reports, enhancing both efficiency and consistency in report generation. This [Excel Report Generation.doc](design/Excel+Report+Generation.doc) documents the initial requirement and design.
@@ -34,6 +34,8 @@ navigate under the project excelreport root and run
 `./gradlew clean build`
 
 The generated excel file named [DRSDocumentsUploadReport.xlsx](client\DRSDocumentsUploadReport.xlsx) is located under subproject <i>client</i> folder.
+
+
 
 
 
