@@ -1,6 +1,14 @@
 # Compiled class file
 *.class
 
+# Eclipse generated files
+bin
+.project
+.setting
+
+# Gradle generated build file
+build
+
 # Log file
 *.log
 
@@ -22,3 +30,4 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+/.gradle/
