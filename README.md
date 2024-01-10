@@ -25,7 +25,7 @@ The project consists of two subprojects. The first is the framework, which is bu
 
 </br>
 
-The client-side application comprises three classes. The first is [DRSDocuments.java](client/src/main/java/com/eagle/tech/model/DRSDocuments.java), which is an annotated class representing a specific Excel report that needs to be generated. The second class, [DRSDocumentsExporter.java](client/src/main/java/com/eagle/tech/export/DRSDocumentsExporter.java), serves as the entry point to specify the type of Excel report and its file name. Finally, [DRSDocumentService.java](client/src/main/java/com/eagle/tech/service/DRSDocumentService.java) simulates loading data in the service tier.
+The client-side application comprises three classes. The first is model class [DRSDocuments.java](client/src/main/java/com/eagle/tech/model/DRSDocuments.java), representing a specific Excel report that needs to be generated. The model class is an annotated with styles. The second class, [DRSDocumentsExporter.java](client/src/main/java/com/eagle/tech/export/DRSDocumentsExporter.java), serves as the entry point to specify the type of Excel report and its file name. Finally, [DRSDocumentService.java](client/src/main/java/com/eagle/tech/service/DRSDocumentService.java) simulates loading data in the service tier.
 
 ### 3. Build
 
