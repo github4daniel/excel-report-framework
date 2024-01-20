@@ -33,7 +33,7 @@ navigate under the project excelreport root and run
 
 `./gradlew clean build`
 
-The generated excel file named [DRSDocumentsUploadReport.xlsx](client\DRSDocumentsUploadReport.xlsx) is located under subproject <i>client</i> folder.
+The generated excel file named [DRSDocumentsUploadReport.xlsx](client/DRSDocumentsUploadReport.xlsx) is located under subproject <i>client</i> folder.
 
 
 
