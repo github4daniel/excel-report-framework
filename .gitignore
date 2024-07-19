@@ -2,7 +2,7 @@
 **/bin
 **/.project
 **/.classpath
-**/.setting
+**/.settings
 
 # Gradle generated build file
 **/build
