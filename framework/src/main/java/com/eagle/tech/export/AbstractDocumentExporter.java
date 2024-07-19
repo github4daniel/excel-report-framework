@@ -56,6 +56,7 @@ public abstract class AbstractDocumentExporter<T extends AnnotatedReport> {
 		List<ValueAttributes> attributes = AnnotationProcessor.processFieldAnnotation(getClassName());
 
 		List<T> eData = getExportData();
+		attributes.stream().forEach(a-> a.setCellStyle(wb.createCellStyle()));
 
 		if (eData != null) {
 			IntStream.range(0, eData.size()).forEach(index -> {

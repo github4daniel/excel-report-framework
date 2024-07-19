@@ -14,6 +14,7 @@ import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.RichTextString;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -25,10 +26,19 @@ public class ValueAttributes {
 	private HorizontalAlignment hAlignment;
 	private boolean wrapText;
 	private HSSFColor.HSSFColorPredefined textColor;
+	private XSSFCellStyle cellStyle;
 
 	public ValueAttributes(Field field) {
 		this.fd = field;
 		extractAttributes();
+	}
+
+	public XSSFCellStyle getCellStyle() {
+		return cellStyle;
+	}
+
+	public void setCellStyle(XSSFCellStyle cellStyle) {
+		this.cellStyle = cellStyle;
 	}
 
 	private void extractAttributes() {
@@ -55,7 +65,7 @@ public class ValueAttributes {
 			ValueAttributes a = attributes.get(index);
 			Cell c = row.createCell(index);
 
-			CellStyle rowStyle = wb.createCellStyle();
+			CellStyle rowStyle = a.getCellStyle();
 			rowStyle.setAlignment(a.hAlignment);
 			rowStyle.setWrapText(a.wrapText);
 
@@ -66,29 +76,29 @@ public class ValueAttributes {
 			c.setCellStyle(rowStyle);
 
 			Object obj = a.getValue(doc);
-			if (obj instanceof String) {
-				c.setCellValue((String) obj);
+			if (obj instanceof String str) {
+				c.setCellValue(str);
 			}
-			if (obj instanceof Number) {
-				c.setCellValue(((Number) obj).doubleValue());
+			if (obj instanceof Number num) {
+				c.setCellValue(num.doubleValue());
 			}
-			if (obj instanceof Calendar) {
-				c.setCellValue((Calendar) obj);
+			if (obj instanceof Calendar cal) {
+				c.setCellValue(cal);
 			}
-			if (obj instanceof Date) {
-				c.setCellValue((Date) obj);
+			if (obj instanceof Date dt) {
+				c.setCellValue(dt);
 			}
-			if (obj instanceof LocalDate) {
-				c.setCellValue((LocalDate) obj);
+			if (obj instanceof LocalDate ld) {
+				c.setCellValue(ld);
 			}
-			if (obj instanceof LocalDateTime) {
-				c.setCellValue((LocalDateTime) obj);
+			if (obj instanceof LocalDateTime ldt) {
+				c.setCellValue(ldt);
 			}
-			if (obj instanceof RichTextString) {
-				c.setCellValue((RichTextString) obj);
+			if (obj instanceof RichTextString rts) {
+				c.setCellValue(rts);
 			}
-			if (obj instanceof Boolean) {
-				c.setCellValue(obj == null ? false : (Boolean) obj);
+			if (obj instanceof Boolean b) {
+				c.setCellValue(b == null);
 			}
 		});
 
